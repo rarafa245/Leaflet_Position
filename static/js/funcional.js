@@ -25,32 +25,34 @@ function move_sense(direction){
 	let lat=position.lat;
 	let lng=position.lng;
 
-	if (direction==0){
-		lat=lat+desloc;
-		lng=lng;
-		marker.setLatLng([lat,lng]);
-    get_location(lat,lng)
-	}
-	if (direction==1){
-		lat=lat;
-		lng=lng+desloc;
-		marker.setLatLng([lat,lng]);
-    get_location(lat,lng)
-	}
-	if (direction==2){
-		lat=lat-desloc;
-		lng=lng;
-		marker.setLatLng([lat,lng]);
-    get_location(lat,lng)
-	}
-	if (direction==3){
-		lat=lat;
-		lng=lng-desloc;
-		marker.setLatLng([lat,lng]);
-    get_location(lat,lng)
-	}
-	historyX.push(lng);
-	historyY.push(lat);
+  switch (direction) {
+    case 0:
+      lat=lat+desloc;
+      lng=lng;
+      marker.setLatLng([lat,lng]);
+      get_location(lat,lng)
+      break
+    case 1:
+      lat=lat;
+      lng=lng+desloc;
+      marker.setLatLng([lat,lng]);
+      get_location(lat,lng)
+      break
+    case 2:
+      lat=lat-desloc;
+      lng=lng;
+      marker.setLatLng([lat,lng]);
+      get_location(lat,lng)
+      break
+    case 3:
+      lat=lat;
+      lng=lng-desloc;
+      marker.setLatLng([lat,lng]);
+      get_location(lat,lng)
+      break
+    default:
+      break
+  }
 
 	while(historyX.length>historySize){
 		historyX.shift();

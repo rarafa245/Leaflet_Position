@@ -41,22 +41,22 @@ window.onload = () => {
   })
 
   document.addEventListener('keypress', (event) => {
-    if(event.which==119){
-  		move_sense(0);
-      return
-  	}
-  	if(event.which==100){
-  		move_sense(1);
-      return
-  	}
-  	if(event.which==115){
-  		move_sense(2);
-      return
-  	}
-  	if(event.which==97){
-  		move_sense(3);
-      return
-  	}
+    switch (event.which) {
+      case 119:
+        move_sense(0);
+        break
+      case 100:
+        move_sense(1);
+        break
+      case 115:
+        move_sense(2);
+        break
+      case 97:
+        move_sense(3);
+        break
+      default:
+        break
+      }
   })
 
 }
