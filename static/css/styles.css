@@ -46,3 +46,7 @@ input#submit{
   margin-left: auto;
   margin-right: auto;
 }
+
+footer{
+  margin: 20px;
+}

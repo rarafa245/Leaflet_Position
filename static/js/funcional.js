@@ -5,12 +5,60 @@
 var leftArea
 var rightArea
 
+let historyX=[longitude];
+let historyY=[latitude];
+let historySize=10;
+var lastlat=0;
+var lastlng=0;
+
 function move(latitude, longitude){
 		let lat = latitude
 		let lng = longitude
 		let position = marker.getLatLng()
 		marker.setLatLng([lat,lng])
 		map.panTo(new L.LatLng(lat, lng))
+}
+
+function move_sense(direction){
+  let desloc=0.00005
+	let position=marker.getLatLng();
+	let lat=position.lat;
+	let lng=position.lng;
+
+	if (direction==0){
+		lat=lat+desloc;
+		lng=lng;
+		marker.setLatLng([lat,lng]);
+    get_location(lat,lng)
+	}
+	if (direction==1){
+		lat=lat;
+		lng=lng+desloc;
+		marker.setLatLng([lat,lng]);
+    get_location(lat,lng)
+	}
+	if (direction==2){
+		lat=lat-desloc;
+		lng=lng;
+		marker.setLatLng([lat,lng]);
+    get_location(lat,lng)
+	}
+	if (direction==3){
+		lat=lat;
+		lng=lng-desloc;
+		marker.setLatLng([lat,lng]);
+    get_location(lat,lng)
+	}
+	historyX.push(lng);
+	historyY.push(lat);
+
+	while(historyX.length>historySize){
+		historyX.shift();
+		historyY.shift();
+	}
+
+	lastlat=lat;
+	lastlng=lng;
 }
 
 function addmarker(lat,lng){
@@ -65,4 +113,10 @@ function degreedistance2meters(degree){
 
 function metersdistance2degrees(meters){
   return meters/111111;
+}
+
+function get_location(latitude, longitude){
+  let lat = latitude
+  let lng = longitude
+  document.getElementById("position_text").value = lat+" , "+lng
 }

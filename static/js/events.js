@@ -37,10 +37,26 @@ window.onload = () => {
   })
 
   map.on('click', function(e){
-  	let lat = e.latlng.lat;
-  	let lng = e.latlng.lng;
-    document.getElementById("position_text").value = lat+" , "+lng
-  });
+  	get_location(e.latlng.lat , e.latlng.lng)
+  })
 
+  document.addEventListener('keypress', (event) => {
+    if(event.which==119){
+  		move_sense(0);
+      return
+  	}
+  	if(event.which==100){
+  		move_sense(1);
+      return
+  	}
+  	if(event.which==115){
+  		move_sense(2);
+      return
+  	}
+  	if(event.which==97){
+  		move_sense(3);
+      return
+  	}
+  })
 
 }
