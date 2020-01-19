@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Definitions of Screen -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Imports -->
+    <link rel="stylesheet" href="./static/css/lib/leaflet/leaflet.css">
+    <link rel="stylesheet" href="./static/css/styles.css">
+    <script src="./static/js/lib/leaflet/leaflet.js"></script>
+
+    <title>My Map</title>
+  </head>
+  <body>
+
+    <header>
+      <div id="mapid"></div>
+    </header>
+
+    <ul>
+      <li>
+        <form id="Local" action="#" method="post">
+          <fieldset id="local_data">
+            <legend>Elementos de Localização</legend>
+            <p>
+              <label for="cLat"> Latitude: </label>
+              <input type="text" name="tLat" id="cLat" size="18" placeholder="Latitude"/>
+            </p>
+            <p>
+              <label for="cLng"> Longitude: </label>
+              <input type="text" name="tLng" id="cLng" size="18" placeholder="Longitude"/>
+            </p><br><br>
+            <p>
+              <label for="cAngle"> Angle: </label>
+              <input type="text" name="tAngle" id="cAngle" size="18" placeholder="Angulo"/>
+            </p>
+            <input type="checkbox" name="poly_on" value="on">Poligon
+            <br>
+            <input type="submit" id="submit" value="Enviar">
+          </fieldset>
+        </form>
+      </li>
+
+      <li>
+        <form id="Marker" action="#" method="post">
+          <fieldset id="marker_data">
+            <legend>Elementos Marcador</legend>
+            <p>
+              <label for="cLat"> Latitude: </label>
+              <input type="text" name="tLatM" id="cLatM" size="18" placeholder="Latitude"/>
+            </p>
+            <p>
+              <label for="cLng"> Longitude: </label>
+              <input type="text" name="tLngM" id="cLngM" size="18" placeholder="Longitude"/>
+            </p>
+            <br>
+            <input type="submit" id="submit" value="Enviar">
+          </fieldset>
+        </form>
+      </li>
+    </ul>
+
+    <script src="./static/js/index.js"></script>
+  </body>
+</html>

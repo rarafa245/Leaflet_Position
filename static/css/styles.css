@@ -1,0 +1,37 @@
+div#mapid{
+    height: 415px;
+    width: 100%;
+    left: 0;
+}
+p{
+  display: inline;
+  padding: 10px;
+  margin: 5px;
+}
+
+ul{
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+}
+
+form{
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+fieldset{
+  border: 1px black solid;
+}
+
+input#submit{
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
