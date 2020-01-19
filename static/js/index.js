@@ -3,8 +3,8 @@
 	and make it available in the HTML file
 */
 
-let latitude=-19.937202;
-let longitude=-43.930878;
+let latitude=-19.917342;
+let longitude=-43.928138;
 
 let baseLayer = L.tileLayer(
 	'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
