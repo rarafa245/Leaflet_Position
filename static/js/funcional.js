@@ -6,7 +6,6 @@ var leftArea
 var rightArea
 
 function move(latitude, longitude){
-    clearMap()
 		let lat = latitude
 		let lng = longitude
 		let position = marker.getLatLng()
@@ -66,9 +65,4 @@ function degreedistance2meters(degree){
 
 function metersdistance2degrees(meters){
   return meters/111111;
-}
-
-function clearMap() {
-
-
 }

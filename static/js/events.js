@@ -39,7 +39,7 @@ window.onload = () => {
   map.on('click', function(e){
   	let lat = e.latlng.lat;
   	let lng = e.latlng.lng;
-  	console.log(lat+","+lng)
+    document.getElementById("position_text").value = lat+" , "+lng
   });
 
 
