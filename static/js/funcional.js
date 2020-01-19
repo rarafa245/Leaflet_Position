@@ -2,7 +2,11 @@
   List of Functions used
 */
 
+var leftArea
+var rightArea
+
 function move(latitude, longitude){
+    clearMap()
 		let lat = latitude
 		let lng = longitude
 		let position = marker.getLatLng()
@@ -17,17 +21,23 @@ function addmarker(lat,lng){
 
 
 function setm(m, Location){
+  if (leftArea){
+    map.removeLayer(leftArea); // remove the old polygon...
+  }
 	a = getNeighbor(Location, m + 90, 20);
 	b = getNeighbor(a, m + 180, 20)
   c = getNeighbor(b, m + 270, 40)
   d = getNeighbor(c, m + 360, 20)
-	let leftArea = L.polygon([a,b,c,d], {color: 'red'}).addTo(map);
+	leftArea = L.polygon([a,b,c,d], {color: 'red'}).addTo(map);
 
+  if (rightArea){
+    map.removeLayer(rightArea); // remove the old polygon...
+  }
 	e = getNeighbor(Location, m - 90, 20);
 	f = getNeighbor(e, m, 20)
   g = getNeighbor(f, m + 90, 40)
   h = getNeighbor(g, m + 180, 20)
-	let rightArea = L.polygon([e,f,g,h], {color: 'blue'}).addTo(map);
+	rightArea = L.polygon([e,f,g,h], {color: 'blue'}).addTo(map);
 }
 
 
@@ -56,4 +66,9 @@ function degreedistance2meters(degree){
 
 function metersdistance2degrees(meters){
   return meters/111111;
+}
+
+function clearMap() {
+
+
 }
